@@ -1,24 +1,34 @@
-# README
+# Shoutr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a crud app like twitter.
 
-Things you may want to cover:
+- Ruby version
 
-* Ruby version
+  - 2.5.3
 
-* System dependencies
+- Rails version
 
-* Configuration
+  - 5.2.2
 
-* Database creation
+- System dependencies
 
-* Database initialization
+- Configuration
 
-* How to run the test suite
+  - run this `bundle install` or `bundle update`
 
-* Services (job queues, cache servers, search engines, etc.)
+- Database creation
 
-* Deployment instructions
+  - For creating the database run `rails db:setup`
 
-* ...
+- Database initialization
+
+  - run `rails db:migrate` for initialization
+
+- How to run the test suite
+
+  - run `rspec`
+
+- Services (job queues, cache servers, search engines, etc.)
+
+- Deployment instructions
+  - deployment on local: After cloning this app into local. PLease update the `database.yml` file with proper `username` and `password` you want to use for connect with your local postgresql database.
