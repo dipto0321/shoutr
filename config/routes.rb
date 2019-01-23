@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'dashboards/show'
+  constraints Clearance::Constraints::SignedIn.new do
+    root 'dashboards#show'
+  end
   root 'homes#show'
   resources :passwords, controller: 'clearance/passwords', only: %i[create new]
   resource :session, only: [:create]
