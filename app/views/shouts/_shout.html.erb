@@ -1,7 +1,9 @@
+<% unless shout.content.nil? %>
 <div>
   <h5><%= link_to shout.username, shout.user %></h5>
-  <p><%=shout.body%></p>
+  <p><%=shout.content.body%></p>
   <%=link_to shout do %>
     <%= time_ago_in_words(shout.created_at) %> ago
   <% end %>
 </div>
+<% end %>
