@@ -4,7 +4,7 @@ This is a crud app like twitter.
 
 - Ruby version
 
-  - 2.5.3
+  - 2.6.0
 
 - Rails version
 
