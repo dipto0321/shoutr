@@ -25,6 +25,8 @@ end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'pry-rails'
+  gem 'hirb'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

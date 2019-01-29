@@ -20,4 +20,11 @@ Rails.application.routes.draw do
   get '/sign_in' => 'sessions#new', as: 'sign_in'
   delete '/sign_out' => 'sessions#destroy', as: 'sign_out'
   get '/sign_up' => 'users#new', as: 'sign_up'
+
+  namespace :api, path: '', constraints: { subdomain: 'api' }, defaults: { format: :json } do
+    namespace :v1 do
+      resources :users
+      resources :shouts
+    end
+  end
 end
