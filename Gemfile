@@ -30,6 +30,8 @@ group :development, :test do
   gem 'faker'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
   gem 'rspec-rails', '~> 3.8', '>= 3.8.1'
+  gem "guard"
+  gem "guard-rspec"
   gem 'shoulda-matchers', '~> 4.0.0.rc1'
 end
 
