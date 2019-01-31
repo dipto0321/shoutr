@@ -3,7 +3,7 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'example.com' }
   config.cache_classes = true
-
+  config.reload_classes_only_on_change = false
   config.eager_load = false
 
   config.public_file_server.enabled = true
