@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     resource :password,
              controller: 'clearance/passwords',
              only: %i[create edit update]
+    member do
+      post 'follow' => 'followed_users#create'
+      delete 'unfollow' => 'followed_users#destroy'
+    end
   end
 
   resources :shouts, only: %i[create show] do

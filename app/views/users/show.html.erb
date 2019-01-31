@@ -1,3 +1,14 @@
-<h1 class="my-3 border border-secondary p-2 rounded text-center"><%=avatar(@user)%> <%= @user.username%></h1>
-<hr>
-<%= render  @shouts %>
+<div class="row my-4">
+  <div class="col-md-3">
+    <div class="card text-center">
+      <div class="card-body">
+        <%=avatar(@user)%>
+        <h5 class="title"><%= @user.username%></h5>
+        <%= follow_btn(@user) %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <%= render  @shouts %>
+  </div>
+</div>
