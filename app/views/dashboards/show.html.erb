@@ -1,18 +1,32 @@
 <h1>Dashboard</h1>
 <hr>
-<%= form_for @shout do |form| %>
-  <%= form.hidden_field :content_type, value: "TextShout" %>
-  <%= form.fields_for :content do |content_form| %>
-    <%= content_form.text_field :body, placeholder: "Shouts here!", requiered: true %>
-  <% end %>
-  <%= form.submit "Shout!" %>
+<%= simple_form_for @shout do |form| %>
+  <%= form.input :content_type, as: :hidden, input_html: {value: "TextShout"} %>
+  <div class="form-row">
+    <div class="col-10">
+      <%= form.simple_fields_for :content do |content_form| %>
+        <%= content_form.input :body, label: false, placeholder: "Shouts here!", requiered: true %>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= form.button :submit, "Shout!", class: "btn-warning btn-block" %>
+    </div>
+  </div>
 <% end %>
 
-<%= form_for @shout do |form| %>
-  <%= form.hidden_field :content_type, value: "PhotoShout" %>
-  <%= form.fields_for :content do |content_form| %>
-    <%= content_form.file_field :image, requiered: true %>
-  <% end %>
-  <%= form.submit "Shout!" %>
+
+
+<%= simple_form_for @shout do |form| %>
+  <%= form.input :content_type, as: :hidden, input_html: {value: "PhotoShout"} %>
+  <div class="form-row">
+    <div class="col-10">
+      <%= form.simple_fields_for :content do |content_form| %>
+        <%= content_form.input :image, as: :file, requiered: true, label: false %>
+      <% end %>
+    </div>
+    <div class="col-2">
+      <%= form.button :submit, "Shout!", class: "btn-outline-warning btn-block" %>
+    </div>
+  </div>
 <% end %>
 <%= render @shouts %>
