@@ -5,6 +5,7 @@
         <%=avatar(@user)%>
         <h5 class="title"><%= @user.username%></h5>
         <%= follow_btn(@user) %>
+        <%= link_to  "Followers", user_followers_path(@user) %>
       </div>
     </div>
   </div>

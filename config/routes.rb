@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'followers/index'
   get 'dashboards/show'
   constraints Clearance::Constraints::SignedIn.new do
     root 'dashboards#show'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   resource :session, only: [:create]
 
   resources :users, only: %i[create show] do
+    resources :followers, only: %i[index]
     resource :password,
              controller: 'clearance/passwords',
              only: %i[create edit update]
