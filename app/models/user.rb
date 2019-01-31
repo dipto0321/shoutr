@@ -23,7 +23,9 @@ class User < ApplicationRecord
   has_many :likes
   has_many :liked_shouts, through: :likes, source: :shout
 
-
+  def timeline_shouts
+    Shout.where(user_id: followed_user_ids + [id])
+  end
   def like(shout)
     liked_shouts << shout
   end
