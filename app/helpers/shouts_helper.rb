@@ -3,7 +3,7 @@
 module ShoutsHelper
   def shout_form_for(content_type, btn_style)
     simple_form_for(Shout.new, url: content_type.new ) do |form|
-      form.input(:content_type, as: :hidden, input_html: { value: content_type }) + render(html: '<div class="form-row">
+    render(html: '<div class="form-row">
     <div class="col-10">'.html_safe) +
         form.simple_fields_for(:content) { |content_form| yield(content_form) } + render(html: '</div>'.html_safe) +
         render(html: '<div class="col-2">'.html_safe) +
