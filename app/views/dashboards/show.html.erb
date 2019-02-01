@@ -1,32 +1,11 @@
 <h1>Dashboard</h1>
 <hr>
-<%= simple_form_for @shout do |form| %>
-  <%= form.input :content_type, as: :hidden, input_html: {value: "TextShout"} %>
-  <div class="form-row">
-    <div class="col-10">
-      <%= form.simple_fields_for :content do |content_form| %>
-        <%= content_form.input :body, label: false, placeholder: "Shouts here!", requiered: true %>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= form.button :submit, "Shout!", class: "btn-dark btn-block" %>
-    </div>
-  </div>
+<%= shout_form_for(TextShout,'btn-dark') do |form| %>
+    <%= form.input :body, label: false, placeholder: "Shouts here!", requiered: true %>
 <% end %>
 
-
-
-<%= simple_form_for @shout do |form| %>
-  <%= form.input :content_type, as: :hidden, input_html: {value: "PhotoShout"} %>
-  <div class="form-row">
-    <div class="col-10">
-      <%= form.simple_fields_for :content do |content_form| %>
-        <%= content_form.input :image, as: :file, requiered: true, label: false %>
-      <% end %>
-    </div>
-    <div class="col-2">
-      <%= form.button :submit, "Shout!", class: "btn-info btn-block" %>
-    </div>
-  </div>
+<%= shout_form_for(PhotoShout,'btn-info') do |form| %>
+    <%= form.input :image, as: :file, requiered: true, label: false %>
 <% end %>
+
 <%= render @shouts %>

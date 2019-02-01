@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
 module ShoutsHelper
+  def shout_form_for(content_type, btn_style)
+    simple_form_for Shout.new do |form|
+      form.input(:content_type, as: :hidden, input_html: { value: content_type }) + render(html: '<div class="form-row">
+    <div class="col-10">'.html_safe) +
+        form.simple_fields_for(:content) { |content_form| yield(content_form) } + render(html: '</div>'.html_safe) +
+        render(html: '<div class="col-2">'.html_safe) +
+        form.button(:submit, 'Shout!', class: "btn-block #{btn_style}") + render(html: '</div></div>'.html_safe)
+    end
+  end
+
   def like_button(shout)
     if current_user.liked?(shout)
       link_to unlike_shout_path(shout), method: :delete do
