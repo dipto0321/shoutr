@@ -34,5 +34,4 @@ Rails.application.configure do
   config.assets.debug = true
 
   config.assets.quiet = true
-  
 end

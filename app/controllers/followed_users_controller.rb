@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FollowedUsersController < ApplicationController
   def create
     user_to_follow = find_user

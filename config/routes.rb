@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     root 'dashboards#show'
   end
   root 'homes#show'
-  
+
   resources :passwords, controller: 'clearance/passwords', only: %i[create new]
   resource :session, only: [:create]
 
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   post 'text_shouts' => 'shouts#create', defaults: { content_type: TextShout }
   post 'photo_shouts' => 'shouts#create', defaults: { content_type: PhotoShout }
-  
+
   resources :shouts, only: %i[show] do
     member do
       post 'like' => 'likes#create'

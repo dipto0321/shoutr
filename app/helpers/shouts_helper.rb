@@ -2,12 +2,13 @@
 
 module ShoutsHelper
   def shout_form_for(content_type, btn_style)
-    simple_form_for(Shout.new, url: content_type.new ) do |form|
-    render(html: '<div class="form-row">
-    <div class="col-10">'.html_safe) +
-        form.simple_fields_for(:content) { |content_form| yield(content_form) } + render(html: '</div>'.html_safe) +
+    simple_form_for(Shout.new, url: content_type.new) do |form|
+      render(html: '<div class="form-row"><div class="col-10">'.html_safe) +
+        form.simple_fields_for(:content) { |content_form| yield(content_form) } +
+        render(html: '</div>'.html_safe) +
         render(html: '<div class="col-2">'.html_safe) +
-        form.button(:submit, 'Shout!', class: "btn-block #{btn_style}") + render(html: '</div></div>'.html_safe)
+        form.button(:submit, 'Shout!', class: "btn-block #{btn_style}") +
+        render(html: '</div></div>'.html_safe)
     end
   end
 

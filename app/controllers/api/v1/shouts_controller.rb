@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class API::V1::ShoutsController < ApplicationController
   def show
     @shout = Shout.find_by(id: params[:id])
