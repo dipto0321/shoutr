@@ -3,6 +3,7 @@
 class Timeline
   def initialize(users, scope = Shout)
     @users = users
+    @scope = scope
   end
 
   def shouts
