@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
  
+  get 'searches/show'
   constraints Clearance::Constraints::SignedIn.new do
     root 'dashboards#show'
   end
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
   end
 
   resources :hashtags, only: %i[show]
+  resource :search, only: %i[show]
 
   get '/sign_in' => 'sessions#new', as: 'sign_in'
   delete '/sign_out' => 'sessions#destroy', as: 'sign_out'
