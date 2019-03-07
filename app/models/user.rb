@@ -23,7 +23,6 @@ class User < ApplicationRecord
   has_many :likes
   has_many :liked_shouts, through: :likes, source: :shout
 
-
   def like(shout)
     liked_shouts << shout
   end
