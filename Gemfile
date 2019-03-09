@@ -18,6 +18,7 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.2'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
+gem 'sunspot_rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
@@ -31,6 +32,7 @@ group :development, :test do
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
   gem 'rspec-rails', '~> 3.8', '>= 3.8.1'
   gem 'shoulda-matchers', '~> 4.0.0.rc1'
+  gem 'sunspot_solr'
 end
 
 group :development do

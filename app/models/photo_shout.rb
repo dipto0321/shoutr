@@ -2,4 +2,8 @@
 
 class PhotoShout < ApplicationRecord
   has_one_attached :image
+
+  searchable do
+    text :image
+  end
 end
