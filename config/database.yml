@@ -4,8 +4,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: SQL6521
+  username: <%= Rails.application.credentials.dig(:pg_cred, :user) %>
+  password: <%= Rails.application.credentials.dig(:pg_cred, :pwd) %>
 
 development:
   <<: *default
