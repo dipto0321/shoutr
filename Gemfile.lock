@@ -65,7 +65,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
-    duktape (2.0.1.0)
+    duktape (2.3.0.0)
     email_validator (1.6.0)
       activemodel
     erubi (1.8.0)
